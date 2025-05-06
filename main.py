@@ -1,3 +1,4 @@
+#Para hacer: Importar FastAPI
 from computador import Computador
 
 def main():

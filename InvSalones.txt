@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario de salones</title>
+	<link rel="/CSS/Estilo.css">
+</head>
+
+<body>
+    <header>
+        <div class="arriba">
+            <img class="icono" alt="Icono">
+            <span><h1>Gestor</h1></span>
+        </div>
+    </header>
+
+    <div class="barralado">
+        <ul class="navigation">
+            <li><a href=#>Inicio</a></li>
+            <li><a href=#>Inventario de salones</a></li>
+            <li><a href=#>Equipos prestados a docentes</a></li>
+        </ul>
+    </div>
+    <main>
+        <h1>Bienvenidos al sistema Gestor</h1> 
+    </main>
+</body>
