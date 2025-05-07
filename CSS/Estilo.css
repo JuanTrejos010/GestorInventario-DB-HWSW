@@ -1,6 +1,36 @@
+
+h1 {
+	font-family: Garamond;
+	font-size:32px;
+}
+
+p {
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size:16px;
+	color:#213599;
+}
+
+header {
+	clear:both;
+
 header .arriba {
 	position:relative;
 	left:10px;
 	top:5px;
 }
+
+nav {
+	position:absolute;
 	
+}
+
+nav .navigation {
+	position:relative;
+	left:6px;
+	color:#225225;
+}
+
+main {
+	position:absolute;
+	right:20%;
+}
