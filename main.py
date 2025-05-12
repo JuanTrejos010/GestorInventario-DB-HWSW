@@ -1,5 +1,6 @@
 #Para hacer: Importar FastAPI
 from computador import Computador
+import os
 
 def main():
     comp = Computador()
