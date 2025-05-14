@@ -1,6 +1,14 @@
-#Para hacer: Importar FastAPI
+#Librerías
+from fastapi import FastAPI, HTTPException
 from computador import Computador
 import os
+
+URL_DATABASE ="mysql+pymysql://root:@localhost:3306/escolar"
+app= FastAPI()
+
+@app.get("/")
+async def root():
+    return 0;
 
 def main():
     comp = Computador()
