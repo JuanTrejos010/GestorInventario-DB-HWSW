@@ -8,7 +8,8 @@ app= FastAPI()
 
 @app.get("/")
 async def root():
-    return 0;
+    return {"Hola: Hola"}
+
 
 def main():
     comp = Computador()

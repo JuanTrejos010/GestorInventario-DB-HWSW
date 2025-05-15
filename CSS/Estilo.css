@@ -15,28 +15,49 @@ p {
 }
 
 header {
+	position:absolute;
+	top:0px;
+	height:100px;
+	width:100%;
 	clear:both;
+	background:#FAFAFA;
 }
 
 header .arriba {
+	float:left;
 	position:relative;
 	left:10px;
 	top:5px;
 }
 
+header .titulo {
+	float:left;
+}
+
 nav {
-	position:absolute;
+	height:100%;
+	width:calc(15% - 2px);
 	background:#F7C59F;
+	color:#225225;
 	
 }
 
 nav .navigation {
 	position:relative;
 	left:6px;
-	color:#225225;
+}
+
+nav .navigation .ul {
+	list-style-type:none;
+}
+
+nav .navigation .ul .li {
+	padding
 }
 
 main {
-	position:absolute;
+	float:left;
+	
+	left:4px;
 	right:20%;
 }
