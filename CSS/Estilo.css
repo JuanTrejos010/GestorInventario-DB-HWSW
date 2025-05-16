@@ -17,6 +17,7 @@ p {
 header {
 	position:absolute;
 	top:0px;
+	left:0px;
 	height:100px;
 	width:100%;
 	clear:both;
@@ -35,6 +36,8 @@ header .titulo {
 }
 
 nav {
+	/*position:absolute;
+	top:101px;*/
 	height:100%;
 	width:calc(15% - 2px);
 	background:#F7C59F;
@@ -52,7 +55,7 @@ nav .navigation .ul {
 }
 
 nav .navigation .ul .li {
-	padding
+	/*padding*/
 }
 
 main {
