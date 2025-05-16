@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario de Salones</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { margin-bottom: 20px; }
+        .item { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        .qr img { height: 100px; }
+    </style>
+</head>
+<body>
+    <h1>Inventario de Salones</h1>
+
+    <form action="/agregar" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre del ítem" required>
+        <input type="text" name="descripcion" placeholder="Descripción" required>
+        <button type="submit">Agregar ítem</button>
+    </form>
+
+    {% for item in inventario %}
+    <div class="item">
+        <strong>{{ item.nombre }}</strong> - {{ item.descripcion }}
+        <div class="qr">
+            <img src="{{ url_for('static', filename='qr_codes/' + item.codigo + '.png') }}" alt="QR">
+        </div>
+        <a href="/eliminar/{{ item.codigo }}">Eliminar</a>
+    </div>
+    {% endfor %}
+</body>
+</html>

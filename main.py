@@ -1,16 +1,25 @@
 #Librerías
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import RedirectResponse, HTMLResponse,  FileResponse
 from computador import Computador
 import os
+import uvicorn
+from fastapi.templating import Jinja2Templates
 
+#Se crean variables para las plantillas(templates)
+templates = Jinja2Templates(directory=".")
 URL_DATABASE ="mysql+pymysql://root:@localhost:3306/escolar"
 app= FastAPI()
 
+#Funciones para llamar los recursos para la página web
 @app.get("/")
-async def root():
-    return {"Hola: Hola"}
-
-
+def inicio(request: Request):
+    return templates.TemplateResponse("Inicio.html", {"request": request})
+@app.get("/CSS/Estilo.css")
+async def get_css():
+    return FileResponse("CSS/Estilo.css")
+    
+    
 def main():
     comp = Computador()
 
@@ -32,5 +41,5 @@ def main():
 
     comp.cerrar_conexion()
 
-if _name_ == "_main_":
-    main()
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8005)
