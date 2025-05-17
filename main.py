@@ -1,10 +1,12 @@
 #Librerías
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import RedirectResponse, HTMLResponse,  FileResponse
-from computador import Computador
 import os
 import uvicorn
 from fastapi.templating import Jinja2Templates
+
+#importar otros módulos
+from computador import Computador
 
 #Se crean variables para las plantillas(templates)
 templates = Jinja2Templates(directory=".")
@@ -15,6 +17,15 @@ app= FastAPI()
 @app.get("/")
 def inicio(request: Request):
     return templates.TemplateResponse("Inicio.html", {"request": request})
+@app.get("/InventarioSalones.html")
+def inventario(request: Request):
+    return templates.TemplateResponse("InventarioSalones.html", {"request": request})
+@app.get("/InventarioSNuevo.html")
+def inventarioN(request: Request):
+    return templates.TemplateResponse("InventarioSNuevo.html", {"request": request})
+@app.get("/PrestamosProf.html")
+def PrestamosProf(request: Request):
+    return templates.TemplateResponse("PrestamosProf.html", {"request": request})
 @app.get("/CSS/Estilo.css")
 async def get_css():
     return FileResponse("CSS/Estilo.css")
