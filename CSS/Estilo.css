@@ -15,9 +15,6 @@ p {
 }
 
 header {
-	position:absolute;
-	top:0px;
-	left:0px;
 	height:100px;
 	width:100%;
 	clear:both;
@@ -32,14 +29,12 @@ header .arriba {
 }
 
 header .titulo {
-	float:left;
+	width:28px;
 }
 
 nav {
-	/*position:absolute;
-	top:101px;*/
-	height:100%;
-	width:calc(15% - 2px);
+	height:calc(15% - 2px);
+	width:100%;
 	background:#F7C59F;
 	color:#225225;
 	
@@ -60,7 +55,6 @@ nav .navigation .ul .li {
 
 main {
 	float:left;
-	
 	left:4px;
 	right:20%;
 }

@@ -10,8 +10,8 @@
         .qr img { height: 100px; }
     </style>
 </head>
-<body>
-	<header>
+	<body>
+		<header>
 			<div class="icono">
 				<img class="icono" alt="Icono">
 				<span><h1>Gestor</h1></span>
@@ -23,31 +23,32 @@
 				<li><a href="Inicio.html">Inicio</a></li>
 				<li><a href="InventarioSalones.html">Inventario de salones</a></li>
 				<li><a href=#>Equipos prestados a docentes</a></li>
+				<li><a href="NoFuncionales.html">Equipos sin funcionamiento</a></li>
 			</ul>
 		</nav>
-	</header>
-    <h1>Inventario de Salones</h1>
+	<main>
+		<h1>Inventario de Salones</h1>
 
-    <form action="/agregar" method="POST">
-		<label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" placeholder="Nombre del ítem" required>
-		<label for="descripcion">Descripción:</label>
-        <input type="text" name="descripcion" placeholder="Descripción" required>
-		<label for="fecha-compra">Fecha de compra:</label>
-		<input type="date" id="fecha-compra">
-		<
-		<br>
-        <button type="submit">Agregar ítem</button>
-    </form>
+		<form action="/agregar" method="POST">
+			<label for="nombre">Nombre:</label>
+			<input type="text" name="nombre" placeholder="Nombre del ítem" required>
+			<label for="descripcion">Descripción:</label>
+			<input type="text" name="descripcion" placeholder="Descripción" required>
+			<label for="fecha-compra">Fecha de compra:</label>
+			<input type="date" id="fecha-compra">
+			<br>
+			<button type="submit">Agregar ítem</button>
+		</form>
 
-    {% for item in inventario %}
-    <div class="item">
-        <strong>{{ item.nombre }}</strong> - {{ item.descripcion }}
-        <div class="qr">
-            <img src="{{ url_for('static', filename='qr_codes/' + item.codigo + '.png') }}" alt="QR">
-        </div>
-        <a href="/eliminar/{{ item.codigo }}">Eliminar</a>
-    </div>
-    {% endfor %}
+		{% for item in inventario %}
+		<div class="item">
+			<strong>{{ item.nombre }}</strong> - {{ item.descripcion }}
+			<div class="qr">
+				<img src="{{ url_for('static', filename='qr_codes/' + item.codigo + '.png') }}" alt="QR">
+			</div>
+			<a href="/eliminar/{{ item.codigo }}">Eliminar</a>
+		</div>
+		{% endfor %}
+	</main>
 </body>
 </html>
