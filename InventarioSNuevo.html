@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Inventario de Salones</title>
+	<link rel="stylesheet" href="CSS/Estilo.css">
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
         form { margin-bottom: 20px; }
         .item { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
         .qr img { height: 100px; }
@@ -14,8 +14,10 @@
     <h1>Inventario de Salones</h1>
 
     <form action="/agregar" method="POST">
+		<label for="nombre">Nombre:</label>
         <input type="text" name="nombre" placeholder="Nombre del ítem" required>
         <input type="text" name="descripcion" placeholder="Descripción" required>
+		<input type="date">
         <button type="submit">Agregar ítem</button>
     </form>
 

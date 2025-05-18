@@ -30,7 +30,7 @@ def PrestamosProf(request: Request):
 async def get_css():
     return FileResponse("CSS/Estilo.css")
     
-    
+#No tengo idea de cómo manejar esta función 
 def main():
     comp = Computador()
 
@@ -52,5 +52,6 @@ def main():
 
     comp.cerrar_conexion()
 
+#ejecución del servidor
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8005)
