@@ -22,20 +22,34 @@
 			<ul class="navigation">
 				<li><a href="Inicio.html">Inicio</a></li>
 				<li><a href="InventarioSalones.html">Inventario de salones</a></li>
-				<li><a href=#>Equipos prestados a docentes</a></li>
+				<li><a href="PrestamosProf.html">Equipos prestados a docentes</a></li>
 				<li><a href="NoFuncionales.html">Equipos sin funcionamiento</a></li>
 			</ul>
 		</nav>
 	<main>
 		<h1>Inventario de Salones</h1>
 
-		<form action="/agregar" method="POST">
+		<form action="/inventarioN" method="POST">
 			<label for="nombre">Nombre:</label>
 			<input type="text" name="nombre" placeholder="Nombre del ítem" required>
 			<label for="descripcion">Descripción:</label>
 			<input type="text" name="descripcion" placeholder="Descripción" required>
+			<br>
+			<label for="salon">Salón</label>
+			<input type="text" name="salon" maxlength="4">
+			<br>
+			<label for="LugarCompra">Proveedor o lugar de compra</label>
+			<input type="text" name="LugarCompra" required>
 			<label for="fecha-compra">Fecha de compra:</label>
-			<input type="date" id="fecha-compra">
+			<input type="date" name="fecha-compra">
+			<br>
+			<label for="estado">Estado:</label>
+			<br>
+			<select name="estado">
+				<option value="BuenEstado">En buen estado</option>
+				<option value="Deteriorado">Deteriorado</option>
+				<option value="Dañado">Dañado</option>
+			</select>
 			<br>
 			<button type="submit">Agregar ítem</button>
 		</form>
