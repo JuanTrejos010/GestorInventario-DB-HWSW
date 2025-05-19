@@ -9,6 +9,12 @@ port = 3306
 nombre_bd = "escolar"
 
 DATABASE_URL = f"mysql+pymysql://{user}:{password}@{port}"
+enginetmp = create_engine(DATABASE_URL)
+with engine_tmp.connect() as connection:
+    connection.execute(text(f"CREATE DATABASE IF NOT EXISTS {nombre_bd}"))
+    print(f"Base de datos '{nombre_bd}' verificada o creada.")
+
+DATABASE_URL = f"mysql+pymysql://{user}:{password}@{host}:{port}/{nombre_bd}"
 engine = create_engine(DATABASE_URL)
 
 
