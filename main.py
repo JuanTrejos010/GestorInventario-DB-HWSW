@@ -1,6 +1,6 @@
 #Librerías
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import RedirectResponse, HTMLResponse,  FileResponse
+from fastapi.responses import RedirectResponse, HTMLResponse, FileResponse
 import os
 import uvicorn
 from fastapi.templating import Jinja2Templates
@@ -32,6 +32,14 @@ def NoFuncionales(request: Request):
 @app.get("/CSS/Estilo.css")
 async def get_css():
     return FileResponse("CSS/Estilo.css")
+    
+#Funciones de bases de datos
+@app.get("/inventarioN", response_class=HTMLResponse)
+def mostrar_Inventario(request: Request):
+    return templates.TemplateResponse("InventarioSNuevo.html", {"request": request})
+@app.post("/inventarioN", response_class=HTMLResponse)
+def subir_Inventario(request: Request):
+    pass
     
 #Funciones para ejecutar el sistema
 
