@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario de Salones</title>
+	<link rel="stylesheet" href="CSS/Estilo.css">
+    <style>
+        form { margin-bottom: 20px; }
+        .item { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        .qr img { height: 100px; }
+    </style>
+</head>
+	<body>
+		<header>
+			<div class="icono">
+				<img class="icono" alt="Icono">
+				<span><h1>Gestor</h1></span>
+			</div>
+		</header>
+
+		<nav>
+			<ul class="navigation">
+				<li><a href="Inicio.html">Inicio</a></li>
+				<li><a href="InventarioSalones.html">Inventario de salones</a></li>
+				<li><a href="PrestamosProf.html">Equipos prestados a docentes</a></li>
+				<li><a href="NoFuncionales.html">Equipos sin funcionamiento</a></li>
+			</ul>
+		</nav>
+	<main>
+		<h1>Préstamo nuevo</h1>
+
+		<form action="/inventarioN" method="POST">
+			<label for="equipo">Equipo:</label>
+			<select name="equipo">
+				<option value="1">Equipo1</option>
+				<option value="2">Equipo2</option>
+			</select>
+			<br>
+			<label for="profesor">Profesor:</label>
+			<select name="equipo">
+				<option value="1">Profesor1</option>
+				<option value="2">Profesor2</option>
+			</select>
+			<label for="LugarCompra">Proveedor o lugar de compra</label>
+			<input type="text" name="LugarCompra" required>
+			<label for="fecha-compra">Fecha de compra:</label>
+			<input type="date" name="fecha-compra">
+			<br>
+			<label for="estado">Estado:</label>
+			<br>
+			<select name="estado">
+				<option value="BuenEstado">En buen estado</option>
+				<option value="Deteriorado">Deteriorado</option>
+				<option value="Dañado">Dañado</option>
+			</select>
+			<br>
+			<button type="submit">Agregar ítem</button>
+		</form>
+
+		{% for item in inventario %}
+		<div class="item">
+			<strong>{{ item.nombre }}</strong> - {{ item.descripcion }}
+			<div class="qr">
+				<img src="{{ url_for('static', filename='qr_codes/' + item.codigo + '.png') }}" alt="QR">
+			</div>
+			<a href="/eliminar/{{ item.codigo }}">Eliminar</a>
+		</div>
+		{% endfor %}
+	</main>
+</body>
+</html>
