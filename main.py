@@ -1,5 +1,5 @@
 #Librerías
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Form
 from fastapi.responses import RedirectResponse, HTMLResponse, FileResponse
 import os
 import uvicorn
