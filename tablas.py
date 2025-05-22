@@ -2,6 +2,8 @@
 from sqlmodel import Field, SQLModel, create_engine
 from datetime import date
 
+#Para los atributos de las clases para las tablas, se debe usar CamelCase.
+
 #Clase para añadir Inventario
 class Inventario(SQLModel, table=true):
   id: int= Field(default=None, index=True, primary_key=True)
@@ -15,6 +17,12 @@ class Inventario(SQLModel, table=true):
 #Clase para añadir préstamos
 class PrestamoP(SQLModel, table=true):
     id: int= Field(default=None, index=True, primary_key=True)
+    Equipo:str
+    Profesor:str
+    LugarCompra:str
+    FechaCompra:date
+    FechaPrestamo:date
+    Estado:str
 
 '''
 @app.post("/submit")
