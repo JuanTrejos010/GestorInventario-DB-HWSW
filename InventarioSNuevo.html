@@ -31,20 +31,20 @@
 
 		<form action="/submitInventario" method="POST">
 			<!--Usa palabra1-palabra2. Reserva CamelCase para las clases en tablas.py-->
-			<label for="nombre">Nombre:</label>
+			<label for="Nombre">Nombre:</label>
 			<input type="text" name="nombre" placeholder="Nombre del ítem" required>
-			<label for="descripcion">Descripción:</label>
+			<label for="Descripcion">Descripción:</label>
 			<input type="text" name="descripcion" placeholder="Descripción" required>
 			<br>
-			<label for="salon">Salón</label>
+			<label for="Salon">Salón</label>
 			<input type="text" name="salon" maxlength="4">
 			<br>
-			<label for="lugar-compra">Proveedor o lugar de compra</label>
-			<input type="text" name="lugar-compra" required>
-			<label for="fecha-compra">Fecha de compra:</label>
-			<input type="date" name="fecha-compra">
+			<label for="LugarCompra">Proveedor o lugar de compra</label>
+			<input type="text" name="lugar_compra" required>
+			<label for="FechaCompra">Fecha de compra:</label>
+			<input type="date" name="fecha_compra">
 			<br>
-			<label for="estado">Estado:</label>
+			<label for="Estado">Estado:</label>
 			<br>
 			<select name="estado">
 				<option value="BuenEstado">En buen estado</option>

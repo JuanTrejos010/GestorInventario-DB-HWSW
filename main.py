@@ -8,6 +8,7 @@ from fastapi.templating import Jinja2Templates
 #importar otros módulos
 from database import crear_db, get_session
 from computador import Computador
+from tablas import Inventario, PrestamoP
 
 #Se crean variables para las plantillas(templates)
 templates = Jinja2Templates(directory=".")
@@ -41,13 +42,40 @@ async def get_css():
 def mostrar_Inventario(request: Request):
     return templates.TemplateResponse("InventarioSNuevo.html", {"request": request})
 @app.post("/inventarioN", response_class=HTMLResponse)
-def subir_Inventario(request: Request):
+def subir_Inventario(
+    request: Request,
+    Nombre:str = Form(...),
+    Descripcion:str = Form(...),
+    Salon:str = Form(...),
+    LugarCompra:str = Form(...),
+    FechaCompra:date = Form(""),
+    Estado:str = Form(...),
+    ):
+        item = Inventario(
+        Nombre=Nombre,
+        Descripcion=Descripcion,
+        Salon=Salon,
+        LugarCompra=LugarCompra,
+        FechaCompra=FechaCompra,
+        Estado=Estado
+    )
+    with get_session() as session:
+        session.add(item)
+        session.commit()
+            
+    return templates.TemplateResponse("InventarioSNuevo.html", {
+        "request": request,
+        "mensaje": "Ítem registrado correctamente",
+        "nombre": Nombre
+        
+@app.get("/prestamoN", response_class=HTMLResponse)
+def mostrar_Prestamo(request:Request):
+    return templates.TemplateResponse("PrestamoNuevo.html", {"request": request})
+@app.post("/prestamoN", response_class=HTMLResponse)
+async def subir_Prestamo():
     pass
     
-#Funciones para ejecutar el sistema
-
-
-#ejecución del servidor
+#Ejecución del servidor
 if __name__ == "__main__":
     crear_db()
     get_session()

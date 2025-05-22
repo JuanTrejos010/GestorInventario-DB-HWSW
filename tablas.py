@@ -10,7 +10,7 @@ class Inventario(SQLModel, table=true):
   Nombre:str
   Descripcion:str
   Salon:str
-  LugCompra:str
+  LugarCompra:str
   FechaCompra:date
   Estado:str
   
