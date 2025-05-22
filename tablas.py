@@ -10,7 +10,11 @@ class Inventario(SQLModel, table=true):
   Salon:str
   LugCompra:str
   FechaCompra:date
-  Estado:string
+  Estado:str
+  
+#Clase para añadir préstamos
+class PrestamoP(SQLModel, table=true):
+    id: int= Field(default=None, index=True, primary_key=True)
 
 '''
 @app.post("/submit")
