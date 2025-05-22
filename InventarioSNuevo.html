@@ -29,7 +29,8 @@
 	<main>
 		<h1>Inventario de Salones</h1>
 
-		<form action="/inventarioN" method="POST">
+		<form action="/submitInventario" method="POST">
+			<!--Usa palabra1-palabra2. Reserva CamelCase para las clases en tablas.py-->
 			<label for="nombre">Nombre:</label>
 			<input type="text" name="nombre" placeholder="Nombre del ítem" required>
 			<label for="descripcion">Descripción:</label>
@@ -38,8 +39,8 @@
 			<label for="salon">Salón</label>
 			<input type="text" name="salon" maxlength="4">
 			<br>
-			<label for="LugarCompra">Proveedor o lugar de compra</label>
-			<input type="text" name="LugarCompra" required>
+			<label for="lugar-compra">Proveedor o lugar de compra</label>
+			<input type="text" name="lugar-compra" required>
 			<label for="fecha-compra">Fecha de compra:</label>
 			<input type="date" name="fecha-compra">
 			<br>
