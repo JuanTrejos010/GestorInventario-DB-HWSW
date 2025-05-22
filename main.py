@@ -26,6 +26,9 @@ def inventarioN(request: Request):
 @app.get("/PrestamosProf.html")
 def PrestamosProf(request: Request):
     return templates.TemplateResponse("PrestamosProf.html", {"request": request})
+@app.get("/PrestamoNuevo.html")
+def PrestamoN(request: Request):
+    return templates.TemplateResponse("PrestamoNuevo.html", {"request": request})
 @app.get("/NoFuncionales.html")
 def NoFuncionales(request: Request):
     return templates.TemplateResponse("NoFuncionales.html", {"request": request})
