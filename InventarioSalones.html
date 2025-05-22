@@ -29,6 +29,37 @@
 			<button onclick="location.href='InventarioSNuevo.html'">Registrar</button>
 			<div class="SpConsultas">
 				<h2>Consultas</h2>
+				
+				{% if items %}
+				<table border="1">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Nombre</th>
+							<th>Descripción</th>
+							<th>Salón</th>
+							<th>Lugar de Compra</th>
+							<th>Fecha de Compra</th>
+							<th>Estado</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in items %}
+						<tr>
+							<td>{{ item.id }}</td>
+							<td>{{ item.Nombre }}</td>
+							<td>{{ item.Descripcion }}</td>
+							<td>{{ item.Salon }}</td>
+							<td>{{ item.LugCompra }}</td>
+							<td>{{ item.FechaCompra }}</td>
+							<td>{{ item.Estado }}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				{% else %}
+				<p>No hay elementos en el inventario.</p>
+				{% endif %}
 			</div>
 		</main>
 	</body>
