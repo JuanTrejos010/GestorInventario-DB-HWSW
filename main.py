@@ -58,15 +58,16 @@ def subir_Inventario(
         LugarCompra=LugarCompra,
         FechaCompra=FechaCompra,
         Estado=Estado
-    )
-    with get_session() as session:
-        session.add(item)
-        session.commit()
+        )
+        with get_session() as session:
+            session.add(item)
+            session.commit()
             
-    return templates.TemplateResponse("InventarioSNuevo.html", {
-        "request": request,
-        "mensaje": "Ítem registrado correctamente",
-        "nombre": Nombre
+        return templates.TemplateResponse("InventarioSNuevo.html", {
+            "request": request,
+            "mensaje": "Ítem registrado correctamente",
+            "nombre": Nombre
+    })
         
 @app.get("/prestamoN", response_class=HTMLResponse)
 def mostrar_Prestamo(request:Request):
