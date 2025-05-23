@@ -5,7 +5,7 @@ from datetime import date
 #Para los atributos de las clases para las tablas, se debe usar CamelCase.
 
 #Clase para añadir Inventario
-class Inventario(SQLModel, table=true):
+class Inventario(SQLModel, table=True):
   id: int= Field(default=None, index=True, primary_key=True)
   Nombre:str
   Descripcion:str
@@ -15,7 +15,7 @@ class Inventario(SQLModel, table=true):
   Estado:str
   
 #Clase para añadir préstamos
-class PrestamoP(SQLModel, table=true):
+class PrestamoP(SQLModel, table=True):
     id: int= Field(default=None, index=True, primary_key=True)
     Equipo:str
     Profesor:str

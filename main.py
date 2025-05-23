@@ -58,21 +58,32 @@ def subir_Inventario(
         LugarCompra=LugarCompra,
         FechaCompra=FechaCompra,
         Estado=Estado
-    )
-    with get_session() as session:
-        session.add(item)
-        session.commit()
+        )
+        with get_session() as session:
+            session.add(item)
+            session.commit()
             
-    return templates.TemplateResponse("InventarioSNuevo.html", {
-        "request": request,
-        "mensaje": "Ítem registrado correctamente",
-        "nombre": Nombre
+        return templates.TemplateResponse("InventarioSNuevo.html", {
+            "request": request,
+            "mensaje": "Ítem registrado correctamente",
+            "nombre": Nombre
+    })
         
 @app.get("/prestamoN", response_class=HTMLResponse)
 def mostrar_Prestamo(request:Request):
     return templates.TemplateResponse("PrestamoNuevo.html", {"request": request})
 @app.post("/prestamoN", response_class=HTMLResponse)
-async def subir_Prestamo():
+def subir_Prestamo(
+    request:Request,
+    Equipo:str= Form(...)
+    Marca:str= Form (...)
+    Procesador:str= Form(...)
+    MemoriaRAM:float= Form(...)
+    LugarCompra:str = Form(...),
+    FechaCompra:date = Form(""),
+    FechaCompra:date = Form(""),
+    Estado:str= Form(...)
+):
     pass
     
 #Ejecución del servidor
