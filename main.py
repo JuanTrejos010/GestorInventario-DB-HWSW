@@ -73,7 +73,17 @@ def subir_Inventario(
 def mostrar_Prestamo(request:Request):
     return templates.TemplateResponse("PrestamoNuevo.html", {"request": request})
 @app.post("/prestamoN", response_class=HTMLResponse)
-async def subir_Prestamo():
+def subir_Prestamo(
+    request:Request,
+    Equipo:str= Form(...)
+    Marca:str= Form (...)
+    Procesador:str= Form(...)
+    MemoriaRAM:float= Form(...)
+    LugarCompra:str = Form(...),
+    FechaCompra:date = Form(""),
+    FechaCompra:date = Form(""),
+    Estado:str= Form(...)
+):
     pass
     
 #Ejecución del servidor
